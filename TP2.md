@@ -51,6 +51,8 @@ Indications:
       qui attend une saisie au clavier, et ajoute le texte lu à la chaîne `buffer`, et
     + penser à vider la chaîne entre deux lectures, par exemple avec la méthode [`String::clear`].
 
+* Pour convertir une chaîne `txt` en `f64`, vous devez écrire `txt.parse().unwrap()`.
+
 [`Vec::push`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.push
 [`Vec::pop`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.pop
 [`String::clear`]: https://doc.rust-lang.org/std/vec/struct.Vec.html?search=String%3A%3Aclear
