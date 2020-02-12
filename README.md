@@ -5,6 +5,7 @@ en DUT Informatique de l'IUT Lyon 1 (site de la Doua).
 
 Les notebooks de chaque séance peuvent être visualisés directement dans github,
 ou téléchargés pour être ouverts avec [Jupyter](https://jupyter.org/).
+
 ## Dépendances
 
 
