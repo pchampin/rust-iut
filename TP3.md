@@ -1,6 +1,6 @@
-# TP n°2
+# TP n°3
 
-Avec `cargo`, créez un nouveau projet nommé `tp2`.
+Avec `cargo`, créez un nouveau projet nommé `tp3`.
 
 ## Le type `Point`
 
@@ -23,7 +23,7 @@ géré comme un pile (dernier entré, premier sorti) à l'aide des méthodes [`V
 On vous demande d'écrire les fonctions suivantes :
 
 * `display_stack` qui prend en paramètre un vecteur de points, et les affiches tous à l'écran ;
-* `compute_middle` qui prend en paramètre un vecteur de points de longueur ≥ 2, et remplace les deux derniers points du vecteur par leur milieu.
+* `compute_middle` qui prend en paramètre un vecteur de points, en retire (pop) les deux derniers points, et les remplace (push) par leur milieu. Si le vecteur ne contient pas assez de points, un message d'erreur est affiché (le vecteur n'est pas modifié).
 
 ## Interface en ligne de commande
 
@@ -32,14 +32,14 @@ Votre programme lira répétitivement des commandes sur son entrée standard :
 
 * `!` ou `quit` interromp le programme ;
 * `p` ou `point` entraine la lecture deux nombres x et y au clavier, et ajoute le point correspondant dans la pile ;
-* `m` ou `middle` remplace les deux points du dessus de la pile par leur milieu ;
+* `m` ou `middle` remplace les deux points du sommet de la pile par leur milieu ;
 * une ligne vide de fait rien ;
 * tout autre texte saisi affiche un message d'erreur.
 
 Après chaque commande,
 le programme affichera le contenu de la pile et attendra la prochaine commande.
 
-Indications:
+### Indications
 
 * Pour afficher un message d'erreur, on utilisera `eprinln!` au lieu de `prinln!`
   (affichage sur l'erreur standard).
@@ -47,11 +47,16 @@ Indications:
 * Pour lire une ligne au clavier, vous devrez :
 
     + préparer une chaîne de caractère mutable `buffer`,
-    + utiliser la commande `std::io::stdin().read_line(&mut buffer).unwrap();`
-      qui attend une saisie au clavier, et ajoute le texte lu à la chaîne `buffer`, et
-    + penser à vider la chaîne entre deux lectures, par exemple avec la méthode [`String::clear`].
+    + utiliser l'instruction `std::io::stdin().read_line(&mut buffer).expect(error_message)`
+      qui attend une saisie au clavier, et ajoute le texte lu à la chaîne `buffer`
+      (et panique en affichant `error_message` en cas d'erreur de lecture), et
+    + penser à vider la chaîne entre deux lectures, par exemple avec la méthode `buffer.clear()`.
 
-* Pour convertir une chaîne `txt` en `f64`, vous devez écrire `txt.parse().unwrap()`.
+* Pour convertir une chaîne `txt` en `f64`, vous devez utiliser la méthode `txt.parse()`,
+  qui retourne un `Result<f64,_>`.
+  
+    + Pour la commande `point`, si le texte saisi par l'utilisateur ne peut pas être converti en `f64`,
+      affichez l'erreur sur l'erreur standard, et recommencez la lecture jusqu'à un succès.
 
 [`Vec::push`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.push
 [`Vec::pop`]: https://doc.rust-lang.org/std/vec/struct.Vec.html#method.pop
