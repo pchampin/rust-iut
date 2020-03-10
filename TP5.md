@@ -9,32 +9,32 @@ mais une bibliothèque réutilisable par d'autres.
 
 ## Tests unitaires
 
-Pour tester le code de notre bibliothèque,
-nous allons créer un module nommé `test` :
+Vous constaterez que le fichier `lib.rs` contient les lignes suivantes :
 
-* créez un fichier `test.rs` dans le répertoire `src`;
-* ajoutez à `lib.rs` la les lignes suivantes :
-  ```rust
-  #[cfg(test)]
-  mod test;
-  ```
-  
-NB: la directive #[cfg(test)] indique au compilateur que le module doit être compilé
-*seulement* pour exécuter les tests unitaires.
+```rust
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
+    }
+}
+```
 
-Dans le fichier `test.rs`, ajoutez les lignes suivantes :
+* La directive `#[cfg(test)]` indique au compilateur que le module `tests`
+  doit être compilé *uniquement* pour exécuter les tests unitaires.
+* La directive `#[test]` est utilisée pour indiquer qu'une fonction est un test unitaire.
+* Un test unitaire est considéré comme un succès s'il ne panique pas.
+* La macro `assert_eq!(x, y)` panique si les deux valeurs passées sont différentes.
+* Une autre macro `assert!(x)` panique si la valeur passée est `false`.
+
+Ajoutez dans le module `tests` la fonction suivante :
 ```rust
 #[test]
 fn test0() {
     assert!(1+1 == 3);
 }
 ```
-
-Notez que :
-* la directive `#[test]` indique que cette fonction est un test unitaire ;
-* la macro `assert!` panique si l'expression passée en paramètre est fausse.
-
-Un test unitaire est considéré comme un succès s'il ne panique pas.
 
 Pour lancer les tests, utilisez la commande `cargo test`,
 et constatez que `test0` échoue.
