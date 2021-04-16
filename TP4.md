@@ -9,11 +9,11 @@ mais en tirant profit de ce que nous avons vu à cette séance.
 
 Dans un premier temps, on vous demande de créer un module `point`,
 dans lequel vous définirez un type struct public `Point` représentant un point du plan,
-dont les coordonées x et y sont des flottants sur 64 bits.
+dont les coordonnées x et y sont des flottants sur 64 bits.
 
 On vous demande ensuite d'écrire les **méthodes** publiques suivantes pour ce type :
 
-* un constructeur `new` qui prend deux flottants x et y, et retourne le point correspondant ;
+* un constructeur `new` qui prend deux flottants x et y en paramètres, et retourne le point correspondant ;
 * `display` qui affiche à l'écran les coordonnées du point ;
 * `distance` qui prend en paramètre un deuxième point, et retourne la distance entre self et l'autre point ;
 * `middle` qui prend en paramètre un deuxième point, et retourne le milieu entre self et l'autre point ;
@@ -41,7 +41,7 @@ pour ajouter et récupérer des valeurs dans la pile.
 
 On vous demande d'écrire les fonctions suivantes, qui prennent toutes en paramètre un vecteur de points :
 
-* `display_stack` qui affiches toutes les valeurs de la pile à l'écran ;
+* `display_stack` qui affiche toutes les valeurs de la pile à l'écran ;
 * `make_point` qui vérifie que les deux valeurs au sommet de la pile sont bien des nombres,
   et les remplace par un point construit à partir de ces deux valeurs ;
 * `compute_distance` qui vérifie que les deux valeurs au sommet de la pile sont bien des points,
@@ -55,10 +55,10 @@ Pour toutes ces méthodes, si la pile ne contient pas le bon nombre d'éléments
 
 ## Interface en ligne de commande
 
-Écrivez maintenant la fonction `main` qui permette de gérer interactivement une pile de valeurs telle que décrite ci-dessus.
+Écrivez maintenant la fonction `main` qui permet de gérer interactivement une pile de valeurs telle que décrite ci-dessus.
 Votre programme lira répétitivement des commandes sur son entrée standard :
 
-* `!` ou `quit` interromp le programme ;
+* `!` ou `quit` interrompt le programme ;
 * tout nombre ajoutera ce nombre au sommet de la pile ;
 * `p` ou `point` appellera la fonction `make_point` ;
 * `d` ou `distance` appellera la fonction `compute_distance` ;
@@ -72,7 +72,7 @@ le programme affichera le contenu de la pile et attendra la prochaine commande.
 
 ### Indications
 
-* Pour calculez une distance, notez que toute valeur `f64` a une méthode `sqrt`
+* Pour calculer une distance, notez que toute valeur `f64` a une méthode `sqrt`
   qui donne sa racine carrée.
   
 * Pour accéder depuis un module à un autre module du programme,
