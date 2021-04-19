@@ -43,12 +43,12 @@ Modifiez le code pour faire en sorte qu'il réussisse, et lancez `cargo test` à
 
 ## Le type `Vecteur`
 
-Votre travail consiste maintenant à définit un type `Vecteur`
+Votre travail consiste maintenant à définir un type `Vecteur`
 représentant un vecteur dans un espace à deux dimensions.
 
-Pour chacune des méthodes ou fonctionalités énumérées ci-dessous,
+Pour chacune des méthodes ou fonctionnalités énumérées ci-dessous,
 vous écrirez des tests unitaires qui vérifient leur bon fonctionnement.
-Notez qu'une bonne pratique consiste à écrire les tests **avant** d'implémenter la fonctionalité.
+Notez qu'une bonne pratique consiste à écrire les tests **avant** d'implémenter la fonctionnalité.
 
 Implémentez les méthodes suivantes pour le type Vecteur :
 
@@ -70,4 +70,4 @@ Faites ensuite en sorte que ce type implémente les traits suivants
 Le trait [`std::ops::Mul`](https://doc.rust-lang.org/std/ops/trait.Mul.html)
 permet d'implémenter la multiplication entre opérateurs de type différent.
 
-Vous pouvez donc remplacer la méthode `mul` proposée plus haut par une implementation de ce trait.
+Vous pouvez donc remplacer la méthode `mul` proposée plus haut par une implémentation de ce trait.
